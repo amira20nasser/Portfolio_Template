@@ -410,3 +410,56 @@ footer .footer-links a:hover {
         text-align: left;
     }
 }
+
+/* Articles */
+section {}
+
+.main-title {
+    text-transform: uppercase;
+    font-size: 25px;
+    margin: 0 auto;
+    border: 2px solid black;
+    width: fit-content;
+    position: relative;
+    padding: 10px 20px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.main-title::before,
+.main-title::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%) scale(1);
+    position: absolute;
+    transition: all 0.4s ease;
+    opacity: 0.7;
+}
+
+.main-title::before {
+    left: -30px;
+}
+
+.main-title::after {
+    right: -30px;
+}
+
+.main-title:hover {
+    background-color: var(--main-color);
+    color: #fff;
+    transform: scale(1.05) rotate(-1deg);
+}
+
+.main-title:hover::before {
+    left: 2px;
+    transform: translateY(-50%) scale(1.4);
+}
+
+.main-title:hover::after {
+    right: 2px;
+    transform: translateY(-50%) scale(1.4);
+}
