@@ -34,26 +34,24 @@ ul {
     padding: 0;
 }
 
+/* Container */
 .container {
     padding: 0 16px;
     margin: 0 auto;
 }
 
-/* Small */
 @media (min-width: 768px) {
     .container {
         width: 750px;
     }
 }
 
-/* Medium */
 @media (min-width: 992px) {
     .container {
         width: 970px;
     }
 }
 
-/* Large */
 @media (min-width: 1200px) {
     .container {
         width: 1170px;
@@ -63,8 +61,6 @@ ul {
 /* Start Header */
 header {
     background-color: white;
-    -webkit-box-shadow: 0 0 10px #ddd;
-    -moz-box-shadow: 0 0 10px #ddd;
     box-shadow: 0 0 10px #ddd;
     position: relative;
 }
@@ -131,7 +127,9 @@ header .main-nav>ul>li>a::before {
     background-color: var(--main-color);
     position: absolute;
     bottom: 0;
-    right: -100%;
+    left: -100%;
+    transition: var(--main-transition);
+
 }
 
 header .main-nav>ul>li>a:hover {
@@ -140,9 +138,10 @@ header .main-nav>ul>li>a:hover {
 }
 
 header .main-nav>ul>li>a:hover::before {
-    right: 0;
+    left: 0;
 }
 
+/* menu toggle */
 #menu-checkbox {
     display: none;
 }
@@ -161,10 +160,10 @@ header .main-nav>ul>li>a:hover::before {
     height: 3px;
     background-color: var(--main-color);
     border-radius: 2px;
-    transition: 0.3s;
+    transition: var(--main-transition);
 }
 
-/* Medium screens */
+/* Toggle for Medium screens */
 @media (max-width: 992px) {
     .menu-toggle {
         display: flex;
@@ -184,8 +183,7 @@ header .main-nav>ul>li>a:hover::before {
 
     header .main-nav ul li a {
         padding: 10px;
-        text-align: center;
-        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
     }
 
     #menu-checkbox:checked~.main-nav {
