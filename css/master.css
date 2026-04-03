@@ -331,3 +331,82 @@ header .main-nav>ul>li>a:hover::before {
 }
 
 /* End animation */
+
+/* Footer */
+footer {
+    background-color: #191919;
+    color: #b9b9b9;
+    padding: 20px 0;
+}
+
+footer .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+}
+
+footer .brand-name {
+    color: var(--main-color);
+    font-size: 40px;
+    font-weight: bold;
+}
+
+footer .description {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+footer .social-media {
+    margin-top: 10px;
+}
+
+footer .social-media a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #313131;
+    margin-right: 8px;
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+footer .social-media a:hover {
+    background-color: var(--main-color-alt);
+}
+
+footer .footer-links {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .footer-links a {
+    padding: 8px 0;
+    color: #b9b9b9;
+    text-decoration: none;
+    border-bottom: 1px solid #444;
+    transition: 0.3s;
+}
+
+footer .footer-links a::before {
+    content: "\f101  ";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: var(--main-color);
+}
+
+footer .footer-links a:hover {
+    color: var(--main-color);
+    padding-left: 10px;
+}
+
+@media (min-width: 992px) {
+    footer .container {
+        grid-template-columns: repeat(3, auto);
+        text-align: left;
+    }
+}
