@@ -1,7 +1,4 @@
-* {
-    box-sizing: border-box;
-}
-
+/* Variables */
 :root {
     --main-color: #1e708d;
     --main-color-alt: #145c75;
@@ -10,6 +7,11 @@
     --main-padding-bottom: 100px;
     --section-background: #ececec;
     --nav-height: 72px;
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
 }
 
 html {
@@ -34,7 +36,62 @@ ul {
     padding: 0;
 }
 
-/* Container */
+.main-title {
+    text-transform: uppercase;
+    font-size: 25px;
+    margin: 0 auto;
+    border: 2px solid black;
+    width: fit-content;
+    position: relative;
+    padding: 10px 20px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.main-title::before,
+.main-title::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%) scale(1);
+    position: absolute;
+    transition: all 0.4s ease;
+    opacity: 0.7;
+}
+
+.main-title::before {
+    left: -30px;
+}
+
+.main-title::after {
+    right: -30px;
+}
+
+.main-title:hover {
+    color: #fff;
+    transition-delay: 0.5s;
+    transform: scale(1.05) rotate(-1deg);
+}
+
+.main-title:hover::before {
+    left: 0;
+    z-index: -1;
+    animation: expand-to-fill 0.5s ease forwards;
+
+}
+
+.main-title:hover::after {
+    right: 0;
+    z-index: -1;
+    animation: expand-to-fill 0.5s ease forwards;
+
+}
+
+/* End Base Styles */
+/* Layout */
 .container {
     padding: 0 16px;
     margin: 0 auto;
@@ -58,6 +115,7 @@ ul {
     }
 }
 
+/* End Layout */
 /* Start Header */
 header {
     background-color: white;
@@ -83,13 +141,7 @@ header .brand-name {
     align-items: center;
 }
 
-@media (max-width: 768px) {
-    .header .brand-name {
-        width: 100%;
-        height: 50px;
-    }
-}
-
+/* Navigation */
 header .main-nav ul {
     display: flex;
 }
@@ -270,6 +322,7 @@ header .main-nav>ul>li>a:hover::before {
     }
 }
 
+/* Image */
 .landing .image img {
     position: relative;
     width: 500px;
@@ -300,39 +353,9 @@ header .main-nav>ul>li>a:hover::before {
 }
 
 /* End Landing */
-/* Start animation */
-@keyframes up-and-down {
 
-    0%,
-    100% {
-        top: 0;
-    }
 
-    50% {
-        top: -50px;
-    }
-}
-
-@keyframes bouncing {
-
-    0%,
-    10%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateY(0);
-    }
-
-    40%,
-    60% {
-        transform: translateY(-20px);
-    }
-}
-
-/* End animation */
-
-/* Footer */
+/* Start Footer */
 footer {
     background-color: #191919;
     color: #b9b9b9;
@@ -411,64 +434,39 @@ footer .footer-links a:hover {
     }
 }
 
-/* Articles */
-section {}
+/* End Footer */
 
-.main-title {
-    text-transform: uppercase;
-    font-size: 25px;
-    margin: 0 auto;
-    border: 2px solid black;
-    width: fit-content;
-    position: relative;
-    padding: 10px 20px;
-    transition: all 0.4s ease;
-    cursor: pointer;
+/* Start Animation */
+@keyframes up-and-down {
+
+    0%,
+    100% {
+        top: 0;
+    }
+
+    50% {
+        top: -50px;
+    }
 }
 
-.main-title::before,
-.main-title::after {
-    content: "";
-    width: 12px;
-    height: 12px;
-    background-color: var(--main-color);
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%) scale(1);
-    position: absolute;
-    transition: all 0.4s ease;
-    opacity: 0.7;
+@keyframes bouncing {
+
+    0%,
+    10%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40%,
+    60% {
+        transform: translateY(-20px);
+    }
 }
 
-.main-title::before {
-    left: -30px;
-}
-
-.main-title::after {
-    right: -30px;
-}
-
-.main-title:hover {
-    color: #fff;
-    transition-delay: 0.5s;
-    transform: scale(1.05) rotate(-1deg);
-}
-
-.main-title:hover::before {
-    left: 0;
-    z-index: -1;
-    animation: left-move-to 0.5s ease forwards;
-
-}
-
-.main-title:hover::after {
-    right: 0;
-    z-index: -1;
-    animation: left-move-to 0.5s ease forwards;
-
-}
-
-@keyframes left-move-to {
+@keyframes expand-to-fill {
     50% {
 
         width: 12px;
@@ -482,15 +480,4 @@ section {}
     }
 }
 
-@keyframes right-move-to {
-    50% {
-        width: 12px;
-        height: 12px;
-    }
-
-    100% {
-        width: 100%;
-        height: 100%;
-        border-radius: 0;
-    }
-}
+/* End Animation */
