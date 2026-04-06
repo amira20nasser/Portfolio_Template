@@ -564,6 +564,163 @@ header .mega-menu .mega-links li:hover::before {
 }
 
 /* End Gallery Section */
+/* Features */
+.features {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: white;
+}
+
+.features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+    gap: 20px;
+}
+
+.features .box {
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc;
+    padding: 16px;
+    overflow: hidden;
+}
+
+.features .box .image {
+    position: relative;
+    overflow: hidden;
+}
+
+.features .box .image::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.features .quality .image::before {
+    background-color: rgb(244 64 54 / 40%);
+}
+
+.features .time .image::before {
+    background-color: rgb(0 150 136 / 40%);
+
+
+}
+
+.features .passion .image::before {
+    background-color: rgb(3 169 244 / 40%);
+
+}
+
+.features .box .image::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-style: solid;
+    border-width: 0 0 170px 600px;
+    border-color: transparent;
+    border-bottom-color: white;
+    transition: var(--main-transition);
+}
+
+.features .box:hover .image::after {
+    /* bottom: 4px; */
+    border-width: 0px 600px 400px 0;
+}
+
+.features .box .image img {
+    max-width: 100%;
+    width: 100%;
+    height: 300px;
+}
+
+.features .box h2 {
+    position: relative;
+    font-size: 25px;
+    width: fit-content;
+    margin: auto;
+}
+
+.features .box h2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 10px;
+    height: 5px;
+    width: calc(100% - 20px);
+}
+
+.features .quality h2::after {
+    background-color: rgb(244, 64, 54);
+}
+
+.features .time h2::after {
+    background-color: rgb(0, 150, 136);
+}
+
+.features .passion h2::after {
+    background-color: rgb(3, 169, 244);
+}
+
+.features .box p {
+    line-height: 2;
+    font-size: 18px;
+    color: rgb(119, 119, 119);
+    margin: 0px 0px;
+    padding: 25px;
+}
+
+.features .box a {
+    display: block;
+    border-width: 3px;
+    border-style: solid;
+    width: fit-content;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0px auto 30px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: var(--main-transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.features .box:hover a {
+    background-position: left bottom;
+    color: white;
+}
+
+.features .quality a {
+    color: rgb(244, 64, 54);
+    border-color: rgb(244, 64, 54);
+    background: linear-gradient(to right, #f44036 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right;
+}
+
+.features .time a {
+    color: rgb(0, 150, 136);
+    border-color: rgb(0, 150, 136);
+    background: linear-gradient(to right, #009688 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right;
+}
+
+.features .passion a {
+    color: rgb(3, 169, 244);
+    border-color: rgb(3, 169, 244);
+    background: linear-gradient(to right, #03a9f4 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right;
+}
+
+/* End Features */
 /* Start Footer */
 footer {
     background-color: #191919;
@@ -688,6 +845,8 @@ footer .footer-links a:hover {
         border-radius: 0;
     }
 }
+
+
 
 @keyframes moving-arrow {
     100% {
