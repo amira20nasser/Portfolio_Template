@@ -887,6 +887,108 @@ header .mega-menu .mega-links li:hover::before {
 
 /* End Team Member */
 
+/* Start Services */
+.services {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: var(--section-background);
+
+}
+
+.services .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.services .box {
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%),
+        0 2px 4px 0 rgb(0 0 0 / 12%);
+    counter-increment: services;
+    transition: var(--main-transition);
+    position: relative;
+}
+
+.services .box:hover {
+    transform: translateY(-10px);
+}
+
+.services .box::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -3px;
+    transform: translateX(-50%);
+    height: 3px;
+    transition: var(--main-transition);
+    width: 0px;
+    background-color: var(--main-color);
+}
+
+.services .box:hover::before {
+    width: 100%;
+}
+
+.services .box>i {
+    color: #d5d5d5;
+    padding: 16px;
+
+}
+
+.services .box>h3 {
+    color: var(--main-color);
+    font-size: 25px;
+}
+
+.services .box .info a {
+    color: var(--main-color-alt);
+}
+
+.services .box .info {
+    position: relative;
+    background-color: #F9f9f9;
+    align-self: stretch;
+    text-align: right;
+    padding: 15px;
+}
+
+
+.services .box .info::before {
+    content: "0" counter(services);
+    position: absolute;
+    background-color: var(--main-color);
+    color: white;
+    height: 100%;
+    width: 80px;
+    left: 0;
+    top: 0;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 15px;
+}
+
+.services .box .info::after {
+    content: "";
+    position: absolute;
+    background-color: #d5d5d5;
+    top: 0;
+    left: 80px;
+    width: 60px;
+    height: calc(100% + 1px);
+    transform: skewX(-30deg);
+}
+
+/* End Services */
+
 /* Start Footer */
 footer {
     background-color: #191919;
