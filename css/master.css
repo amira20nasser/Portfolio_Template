@@ -958,7 +958,6 @@ header .mega-menu .mega-links li:hover::before {
     padding: 15px;
 }
 
-
 .services .box .info::before {
     content: "0" counter(services);
     position: absolute;
@@ -987,7 +986,119 @@ header .mega-menu .mega-links li:hover::before {
     transform: skewX(-30deg);
 }
 
+/* Start Skills */
+.our-skills {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+}
+
+.our-skills .container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.our-skills .container img {
+    height: 40vh;
+}
+
+@media (max-width:991px) {
+    .our-skills .container img {
+        display: none;
+    }
+}
+
+.our-skills .container .skills {
+    flex: 1;
+    width: 100%;
+}
+
+.our-skills .skill {
+    margin-bottom: 25px;
+}
+
+.our-skills .skill h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.our-skills .skill h3 span {
+    font-size: 12px;
+    border: 1px solid #ccc;
+    padding: 3px 6px;
+    border-radius: 4px;
+    color: var(--main-color);
+}
+
+.our-skills .skill .the-progress {
+    height: 30px;
+    background-color: #eee;
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.our-skills .skill .the-progress span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background-color: var(--main-color);
+}
+
+.our-skills:hover .the-progress span {
+    animation: fill 1.5s ease forwards;
+}
+
+.skill:nth-child(1) span {
+    animation-delay: 0.2s;
+}
+
+.skill:nth-child(2) span {
+    animation-delay: 0.4s;
+}
+
+.skill:nth-child(3) span {
+    animation-delay: 0.6s;
+}
+
+.skill:nth-child(4) span {
+    animation-delay: 0.8s;
+}
+
+@keyframes fill {
+    to {
+        width: var(--width);
+    }
+}
+
+
+
+
 /* End Services */
+/* work steps */
+.work-steps {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: var(--section-background);
+}
+
+.work-steps .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 991px) {
+    .work-steps .container {
+        flex-direction: column;
+    }
+}
 
 /* Start Footer */
 footer {
